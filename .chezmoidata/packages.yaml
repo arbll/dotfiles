@@ -4,3 +4,4 @@ packages:
     - 'neovim'
     - 'devcontainer'
     - 'ripgrep'
+    - 'starship'
