@@ -1,0 +1,6 @@
+packages:
+  linux:
+    brew:
+    - 'neovim'
+    - 'devcontainer'
+    - 'ripgrep'
