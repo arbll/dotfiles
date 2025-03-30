@@ -1,6 +1,8 @@
 [user]
-	name = Arthur Bellal
-	email = bellal.arthur@gmail.com
+        name = Arthur Bellal
+        email = bellal.arthur@gmail.com
+[url "ssh://git@github.com/"]
+        insteadOf = https://github.com/
 [column]
         ui = auto
 [branch]
