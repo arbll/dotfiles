@@ -1,6 +1,7 @@
 # starship.rs prompt
 starship init fish | source
-{{- if stat (joinPath .chezmoi.homeDir "dd") }}
+
+if test -d ~/dd
 # BEGIN ANSIBLE MANAGED BLOCK
 # Load homebrew shell variables
 eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -60,4 +61,4 @@ export GONOSUMDB=github.com/DataDog,go.ddbuild.io
 export GOPRIVATE=
 export GOPROXY="https://depot-read-api-go.us1.ddbuild.io/magicmirror/magicmirror/@current/|https://depot-read-api-go.us1.ddbuild.io/magicmirror/magicmirror/@current/|https://depot-read-api-go.us1.ddbuild.io/magicmirror/testing/@current/"
 # END ANSIBLE MANAGED BLOCK
-{{- end }}
+end
