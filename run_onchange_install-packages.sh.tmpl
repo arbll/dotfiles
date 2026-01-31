@@ -13,5 +13,8 @@ brew bundle --file=/dev/stdin <<EOF
 {{ range .packages.mac.brew -}}
 brew {{ . | quote }}
 {{ end -}}
+{{ range .packages.mac.cask -}}
+cask {{ . | quote }}
+{{ end -}}
 EOF
 {{ end -}}
