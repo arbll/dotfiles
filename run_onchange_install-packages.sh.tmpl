@@ -6,4 +6,12 @@ brew bundle --file=/dev/stdin <<EOF
 brew {{ . | quote }}
 {{ end -}}
 EOF
+{{ else if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+brew bundle --file=/dev/stdin <<EOF
+{{ range .packages.mac.brew -}}
+brew {{ . | quote }}
+{{ end -}}
+EOF
 {{ end -}}

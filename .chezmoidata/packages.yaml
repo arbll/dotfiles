@@ -6,3 +6,10 @@ packages:
     - 'ripgrep'
     - 'starship'
     - 'tlrc'
+  mac:
+    brew:
+    - 'neovim'
+    - 'devcontainer'
+    - 'ripgrep'
+    - 'starship'
+    - 'tlrc'
