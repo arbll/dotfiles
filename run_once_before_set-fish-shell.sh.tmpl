@@ -1,0 +1,18 @@
+#!/bin/bash
+
+FISH_PATH="{{ if eq .chezmoi.os "darwin" }}/opt/homebrew/bin/fish{{ else }}/usr/bin/fish{{ end }}"
+
+# Check if fish is in /etc/shells
+if ! grep -q "$FISH_PATH" /etc/shells; then
+    echo "Adding $FISH_PATH to /etc/shells..."
+    echo "$FISH_PATH" | sudo tee -a /etc/shells > /dev/null
+fi
+
+# Change default shell to fish if not already set
+if [ "$SHELL" != "$FISH_PATH" ]; then
+    echo "Setting default shell to fish..."
+    chsh -s "$FISH_PATH"
+    echo "Default shell changed to fish. Please log out and log back in for changes to take effect."
+else
+    echo "Default shell is already set to fish."
+fi
