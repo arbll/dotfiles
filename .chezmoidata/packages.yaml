@@ -6,6 +6,7 @@ packages:
     - 'ripgrep'
     - 'starship'
     - 'tlrc'
+    - 'fish'
   mac:
     brew:
     - 'neovim'
@@ -13,5 +14,6 @@ packages:
     - 'ripgrep'
     - 'starship'
     - 'tlrc'
+    - 'fish'
     cask:
     - 'ghostty'
