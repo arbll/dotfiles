@@ -15,5 +15,6 @@ packages:
     - 'starship'
     - 'tlrc'
     - 'fish'
+    - 'gh'
     cask:
     - 'ghostty'
