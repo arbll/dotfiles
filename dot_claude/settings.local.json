@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(chezmoi source-path:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push)",
+      "Bash(git --version:*)",
+      "Bash(git config:*)",
+      "Bash(ls:*)",
+      "Bash(chezmoi apply:*)",
+      "Bash(brew install:*)",
+      "Bash(sudo tee:*)",
+      "Bash(echo:*)",
+      "Bash(sudo -v:*)",
+      "Bash(chsh:*)",
+      "Bash(chezmoi diff:*)",
+      "Bash(git reset:*)",
+      "Bash(git push:*)",
+      "Bash(chezmoi data:*)",
+      "Bash(chezmoi add:*)",
+      "Bash(test:*)",
+      "Bash(chezmoi cd:*)",
+      "Bash(cd *)",
+      "Bash(pwd)",
+      "Bash(cat *)",
+      "Bash(git status)",
+      "Bash(git diff *)",
+      "Bash(git log *)"
+    ]
+  }
+}

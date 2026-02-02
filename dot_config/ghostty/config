@@ -1,0 +1,6 @@
+# Ghostty config
+
+# Enable desktop notifications
+desktop-notifications = true
+macos-titlebar-style = tabs
+macos-option-as-alt = true
