@@ -61,4 +61,7 @@ export GONOSUMDB=github.com/DataDog,go.ddbuild.io
 export GOPRIVATE=
 export GOPROXY="https://depot-read-api-go.us1.ddbuild.io/magicmirror/magicmirror/@current/|https://depot-read-api-go.us1.ddbuild.io/magicmirror/magicmirror/@current/|https://depot-read-api-go.us1.ddbuild.io/magicmirror/testing/@current/"
 # END ANSIBLE MANAGED BLOCK
+
+# Load ddtool completions
+source (brew --prefix)/share/fish/vendor_completions.d/ddtool.fish
 end
