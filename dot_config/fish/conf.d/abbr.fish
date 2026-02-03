@@ -1,3 +1,3 @@
-abbr -a v nvim
-abbr -a vi nvim
-abbr -a vim nvim
+abbr -a v hx
+abbr -a vi hx
+abbr -a vim hx

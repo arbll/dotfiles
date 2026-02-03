@@ -1,7 +1,7 @@
 set -gx SHELL fish
-set -gx EDITOR nvim
+set -gx EDITOR hx
 set -gx PAGER less
-set -gx MANPAGER 'nvim +Man!'
+set -gx MANPAGER 'less'
 
 # Datadog-specific environment variables
 if test -d "$HOME/dd"

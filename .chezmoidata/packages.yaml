@@ -1,7 +1,7 @@
 packages:
   linux:
     brew:
-    - 'neovim'
+    - 'helix'
     - 'devcontainer'
     - 'ripgrep'
     - 'starship'
@@ -9,7 +9,7 @@ packages:
     - 'fish'
   mac:
     brew:
-    - 'neovim'
+    - 'helix'
     - 'devcontainer'
     - 'ripgrep'
     - 'starship'
