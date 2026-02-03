@@ -1,4 +1,28 @@
 {
+  "webFetchAllowList": [
+    "github.com",
+    "githubusercontent.com",
+    "gitlab.com",
+    "bitbucket.org",
+    "npmjs.com",
+    "pypi.org",
+    "crates.io",
+    "go.dev",
+    "pkg.go.dev",
+    "stackoverflow.com",
+    "stackexchange.com",
+    "docs.rs",
+    "readthedocs.io",
+    "readthedocs.org",
+    "developer.mozilla.org",
+    "rust-lang.org",
+    "python.org",
+    "nodejs.org",
+    "apache.org",
+    "kubernetes.io",
+    "docker.com",
+    "hub.docker.com"
+  ],
   "permissions": {
     "allow": [
       "Bash(chezmoi source-path:*)",
