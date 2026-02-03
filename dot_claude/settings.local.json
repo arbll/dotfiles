@@ -1,4 +1,5 @@
 {
+  "disableCoAuthorTag": true,
   "webFetchAllowList": [
     "github.com",
     "githubusercontent.com",
