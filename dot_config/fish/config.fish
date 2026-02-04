@@ -64,4 +64,7 @@ export GOPROXY="https://depot-read-api-go.us1.ddbuild.io/magicmirror/magicmirror
 
 # Load ddtool completions
 source (brew --prefix)/share/fish/vendor_completions.d/ddtool.fish
+
+# Load dd-gitsign SSH key
+dd-gitsign load-key | source
 end
