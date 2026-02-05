@@ -1,7 +1,6 @@
 abbr -a gc  "git commit --verbose"
 abbr -a gcb "git checkout -b"
 abbr -a gco "git checkout"
-abbr -a gcm "git checkout main"
 abbr -a gst "git status"
 abbr -a glo "git log"
 abbr -a gl  "git pull"
