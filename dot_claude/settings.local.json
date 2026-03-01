@@ -26,7 +26,7 @@
   ],
   "permissions": {
     "allow": [
-      "Read(/Users/arthur.bellal/go/src/**)",
+      "Read(**)",
       "Bash(chezmoi source-path:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
