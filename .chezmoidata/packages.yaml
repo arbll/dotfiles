@@ -18,6 +18,7 @@ packages:
     - 'gh'
     - 'glab'
     - 'PeonPing/tap/peon-ping'
+    - 'datadog-labs/pack/pup'
     - 'minikube'
     - 'kind'
     cask:
