@@ -19,5 +19,6 @@ packages:
     - 'glab'
     - 'PeonPing/tap/peon-ping'
     - 'minikube'
+    - 'kind'
     cask:
     - 'ghostty'
