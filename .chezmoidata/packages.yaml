@@ -16,6 +16,7 @@ packages:
     - 'tlrc'
     - 'fish'
     - 'gh'
+    - 'glab'
     - 'PeonPing/tap/peon-ping'
     cask:
     - 'ghostty'
