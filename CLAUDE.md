@@ -35,3 +35,10 @@ When creating git branches:
 1. Always prefix branch names with `arbll/`
 2. Use descriptive names that reflect the work being done
 3. Examples: `arbll/fix-login-bug`, `arbll/add-user-authentication`, `arbll/refactor-api-client`
+
+## Datadog Agent Repository (`DataDog/datadog-agent`)
+
+When creating pull requests in this repository:
+
+1. If the PR has no release note, always attach the `changelog/no-changelog` label
+2. Always attach the `qa/done` label
