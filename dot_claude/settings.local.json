@@ -40,6 +40,7 @@
       "Bash(hatch --help:*)",
       "Bash(gcloud compute instances *)",
       "Bash(gcloud compute firewall-rules *)",
+      "Bash(gcloud compute ssh *)",
       "Bash(curl *)",
       "mcp__atlassian__atlassianUserInfo",
       "mcp__atlassian__getAccessibleAtlassianResources",
