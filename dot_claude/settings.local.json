@@ -49,6 +49,7 @@
       "Bash(chezmoi cd:*)",
       "Bash(cd *)",
       "Bash(cd * && git *)",
+      "Bash(go *)",
       "Bash(pwd)",
       "Bash(cat *)",
       "Bash(git status)",
