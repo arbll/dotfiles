@@ -36,6 +36,16 @@ When creating git branches:
 2. Use descriptive names that reflect the work being done
 3. Examples: `arbll/fix-login-bug`, `arbll/add-user-authentication`, `arbll/refactor-api-client`
 
+## GitLab CLI (`glab`)
+
+Always use `glab` instead of `gh` for GitLab operations.
+
+For Datadog repositories, they are hosted on GitHub but mirrored on GitLab. Because of this, you must always pass the `--repository` (or `-R`) flag explicitly when using `glab`, e.g.:
+
+```
+glab mr create -R gitlab.ddbuild.io/DataDog/datadog-agent
+```
+
 ## Datadog Agent Repository (`DataDog/datadog-agent`)
 
 When creating pull requests in this repository:
