@@ -38,7 +38,7 @@ When creating git branches:
 
 ## GitLab CLI (`glab`)
 
-Always use `glab` instead of `gh` for GitLab operations.
+Use `glab` when accessing GitLab. Use `gh` for GitHub.
 
 For Datadog repositories, they are hosted on GitHub but mirrored on GitLab. Because of this, you must always pass the `--repository` (or `-R`) flag explicitly when using `glab`, e.g.:
 
