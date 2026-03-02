@@ -46,6 +46,14 @@ For Datadog repositories, they are hosted on GitHub but mirrored on GitLab. Beca
 glab mr create -R gitlab.ddbuild.io/DataDog/datadog-agent
 ```
 
+## DataDog Repositories (any `DataDog/*` repository)
+
+When creating pull requests in any DataDog repository:
+
+1. Always prefix the PR title with `(fleet) ` followed by the description starting with a lowercase letter
+   - Example: `(fleet) add support for remote configuration`
+   - Never capitalize the first letter after the prefix
+
 ## Datadog Agent Repository (`DataDog/datadog-agent`)
 
 When creating pull requests in this repository:
