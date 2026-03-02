@@ -60,6 +60,7 @@
       "Bash(kubectl cluster-info *)",
       "Bash(kubectl diff *)",
       "Bash(kubectl events *)",
+      "Bash(dda *)",
       "mcp__atlassian__atlassianUserInfo",
       "mcp__atlassian__getAccessibleAtlassianResources",
       "mcp__atlassian__getConfluencePage",
