@@ -60,3 +60,10 @@ When creating pull requests in this repository:
 
 1. If the PR has no release note, always attach the `changelog/no-changelog` label
 2. Always attach the `qa/done` label
+
+## Git Commands in Different Directories
+
+Always use `git -C <path>` instead of `cd <path> && git <command>` when running git commands outside the current working directory. The `cd && git` pattern triggers a hardcoded security prompt in Claude Code.
+
+- Correct: `git -C /path/to/repo status`
+- Avoid: `cd /path/to/repo && git status`
