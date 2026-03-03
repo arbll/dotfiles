@@ -3,6 +3,8 @@
   "permissions": {
     "allow": [
       "Read(**)",
+      "Read(~/**)",
+      "Read(//**)",
       "WebSearch(*)",
       "WebFetch(*)",
       "Bash(chezmoi source-path *)",
