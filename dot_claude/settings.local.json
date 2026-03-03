@@ -5,6 +5,7 @@
       "Read(**)",
       "Read(~/**)",
       "Read(//**)",
+      "Edit(**)",
       "WebSearch(*)",
       "WebFetch(*)",
       "Bash(chezmoi *)",
