@@ -28,6 +28,8 @@
       "Bash(go *)",
       "Bash(pwd)",
       "Bash(cat *)",
+      "Bash(head *)",
+      "Bash(tail *)",
       "Bash(find *)",
       "Bash(pip list *)",
       "Bash(pip show *)",
