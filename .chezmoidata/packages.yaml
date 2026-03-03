@@ -21,6 +21,7 @@ packages:
     - 'datadog-labs/pack/pup'
     - 'minikube'
     - 'kind'
+    - 'ffmpeg'
     cask:
     - 'ghostty'
     - 'dda'
