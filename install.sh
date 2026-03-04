@@ -9,29 +9,24 @@ LOGFILE="$HOME/.dotfiles-install.log"
 exec > >(tee -a "$LOGFILE") 2>&1
 echo "=== dotfiles install started at $(date) ==="
 
-echo "=== debug: git config ==="
-git config --global --list --show-origin 2>&1 || true
-echo "=== debug: git config (system) ==="
-git config --system --list --show-origin 2>&1 || true
-echo "=== debug: env ==="
-env | grep -iE '(GIT|SSH|HOME|USER|PATH|SUDO)' | sort || true
-echo "=== debug: ssh test ==="
-ssh -T git@github.com 2>&1 || true
-echo "=== debug: which git / sudo ==="
-which git sudo 2>&1 || true
-echo "=== debug: sudo git config ==="
-sudo git config --global --list --show-origin 2>&1 || true
-echo "=== end debug ==="
+# SSH agent forwarding is not available during workspace creation.
+# The workspace .gitconfig rewrites HTTPS to SSH, which breaks cloning
+# public repos (Homebrew, etc). Temporarily remove the rewrite.
+if git config --global --get url."git@github.com:".insteadOf &>/dev/null; then
+    echo "Temporarily removing git SSH rewrite for install..."
+    git config --global --unset url."git@github.com:".insteadOf
+    trap 'git config --global url."git@github.com:".insteadOf "https://github.com/"' EXIT
+fi
 
-# # Install chezmoi if not already present
-# if ! command -v chezmoi &>/dev/null; then
-#     sh -c "$(curl -fsLS get.chezmoi.io)" -- -b "$HOME/.local/bin"
-#     export PATH="$HOME/.local/bin:$PATH"
-# fi
-#
-# # Initialize and apply dotfiles from this repo (already cloned by workspaces)
-# # The workspaces system clones the dotfiles repo, so we can init from the local copy.
-# SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-# chezmoi init --source="$SCRIPT_DIR" --apply -v
+# Install chezmoi if not already present
+if ! command -v chezmoi &>/dev/null; then
+    sh -c "$(curl -fsLS get.chezmoi.io)" -- -b "$HOME/.local/bin"
+    export PATH="$HOME/.local/bin:$PATH"
+fi
+
+# Initialize and apply dotfiles from this repo (already cloned by workspaces)
+# The workspaces system clones the dotfiles repo, so we can init from the local copy.
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+chezmoi init --source="$SCRIPT_DIR" --apply -v
 
 echo "=== dotfiles install finished at $(date) ==="
