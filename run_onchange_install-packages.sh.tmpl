@@ -8,9 +8,9 @@ if ! command -v brew &>/dev/null; then
 fi
 
 brew bundle --file=/dev/stdin <<EOF
-{{ range .packages.linux.tap -}}
+{{ if hasKey .packages.linux "tap" -}}{{ range .packages.linux.tap -}}
 tap {{ .name | quote }}, {{ .url | quote }}
-{{ end -}}
+{{ end -}}{{ end -}}
 {{ range .packages.linux.brew -}}
 brew {{ . | quote }}
 {{ end -}}
