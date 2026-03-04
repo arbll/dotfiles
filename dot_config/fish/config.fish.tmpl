@@ -20,18 +20,14 @@ export HOMEBREW_DIR=/home/linuxbrew/.linuxbrew
 export HOMEBREW_BIN=/home/linuxbrew/.linuxbrew/bin
 {{ end -}}
 
-{{ if eq .chezmoi.os "darwin" -}}
 # Load python shims
 eval "$(pyenv init -)"
 
 # Load ruby shims
 eval "$(rbenv init -)"
 
-{{ end -}}
 # Load direnv hook
-if command -v direnv &>/dev/null
-    eval "$(direnv hook fish)"
-end
+eval "$(direnv hook fish)"
 
 {{ if eq .chezmoi.os "darwin" -}}
 # Prefer GNU binaries to Macintosh binaries.
@@ -73,9 +69,7 @@ export GOPROXY="https://depot-read-api-go.us1.ddbuild.io/magicmirror/magicmirror
 export GITLAB_HOST=gitlab.ddbuild.io
 
 # Load ddtool completions
-if test -f (brew --prefix)/share/fish/vendor_completions.d/ddtool.fish
-    source (brew --prefix)/share/fish/vendor_completions.d/ddtool.fish
-end
+source (brew --prefix)/share/fish/vendor_completions.d/ddtool.fish
 
 {{ if eq .chezmoi.os "darwin" -}}
 # Load dd-gitsign SSH key (laptop only, workspaces use SSH agent forwarding)
