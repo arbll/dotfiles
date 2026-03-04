@@ -1,5 +1,12 @@
 {
   "disableCoAuthorTag": true,
+  "sandbox": {
+    "enabled": true,
+    "autoAllow": true,
+    "network": {
+      "allowAllDomains": true
+    }
+  },
   "permissions": {
     "allow": [
       "Read(**)",
