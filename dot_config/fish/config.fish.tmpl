@@ -2,30 +2,42 @@
 starship init fish | source
 
 if test -d ~/dd
-# BEGIN ANSIBLE MANAGED BLOCK
 # Load homebrew shell variables
+{{ if eq .chezmoi.os "darwin" -}}
 eval "$(/opt/homebrew/bin/brew shellenv)"
+{{ else -}}
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+{{ end -}}
 
 # Force certain more-secure behaviours from homebrew
 export HOMEBREW_NO_INSECURE_REDIRECT=1
 export HOMEBREW_CASK_OPTS=--require-sha
+{{ if eq .chezmoi.os "darwin" -}}
 export HOMEBREW_DIR=/opt/homebrew
 export HOMEBREW_BIN=/opt/homebrew/bin
+{{ else -}}
+export HOMEBREW_DIR=/home/linuxbrew/.linuxbrew
+export HOMEBREW_BIN=/home/linuxbrew/.linuxbrew/bin
+{{ end -}}
 
+{{ if eq .chezmoi.os "darwin" -}}
 # Load python shims
 eval "$(pyenv init -)"
 
 # Load ruby shims
 eval "$(rbenv init -)"
 
+{{ end -}}
 # Load direnv hook
-eval "$(direnv hook fish)"
+if command -v direnv &>/dev/null
+    eval "$(direnv hook fish)"
+end
 
-# Load git-dd completions for zsh
-
+{{ if eq .chezmoi.os "darwin" -}}
 # Prefer GNU binaries to Macintosh binaries.
 export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 
+{{ end -}}
 # Add datadog devtools binaries to the PATH
 export PATH="$HOME/dd/devtools/bin:$PATH"
 
@@ -52,21 +64,21 @@ export AWS_ASSUME_ROLE_TTL=1h
 # secrets by default, but we still use the old default.
 export HELM_DRIVER=configmap
 
-# Go 1.16+ sets GO111MODULE to off by default with the intention to
-# remove it in Go 1.18, which breaks projects using the dep tool.
-# https://blog.golang.org/go116-module-changes
 export GO111MODULE=auto
 # Configure Go to pull go.ddbuild.io packages.
 export GONOSUMDB=github.com/DataDog,go.ddbuild.io
 export GOPRIVATE=
 export GOPROXY="https://depot-read-api-go.us1.ddbuild.io/magicmirror/magicmirror/@current/|https://depot-read-api-go.us1.ddbuild.io/magicmirror/magicmirror/@current/|https://depot-read-api-go.us1.ddbuild.io/magicmirror/testing/@current/"
-# END ANSIBLE MANAGED BLOCK
 
 export GITLAB_HOST=gitlab.ddbuild.io
 
 # Load ddtool completions
-source (brew --prefix)/share/fish/vendor_completions.d/ddtool.fish
+if test -f (brew --prefix)/share/fish/vendor_completions.d/ddtool.fish
+    source (brew --prefix)/share/fish/vendor_completions.d/ddtool.fish
+end
 
-# Load dd-gitsign SSH key
+{{ if eq .chezmoi.os "darwin" -}}
+# Load dd-gitsign SSH key (laptop only, workspaces use SSH agent forwarding)
 dd-gitsign load-key | source
+{{ end -}}
 end
