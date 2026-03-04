@@ -5,6 +5,10 @@
 
 set -euo pipefail
 
+LOGFILE="$HOME/.dotfiles-install.log"
+exec > >(tee -a "$LOGFILE") 2>&1
+echo "=== dotfiles install started at $(date) ==="
+
 # Install chezmoi if not already present
 if ! command -v chezmoi &>/dev/null; then
     sh -c "$(curl -fsLS get.chezmoi.io)" -- -b "$HOME/.local/bin"
@@ -14,4 +18,6 @@ fi
 # Initialize and apply dotfiles from this repo (already cloned by workspaces)
 # The workspaces system clones the dotfiles repo, so we can init from the local copy.
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-chezmoi init --source="$SCRIPT_DIR" --apply
+chezmoi init --source="$SCRIPT_DIR" --apply -v
+
+echo "=== dotfiles install finished at $(date) ==="
