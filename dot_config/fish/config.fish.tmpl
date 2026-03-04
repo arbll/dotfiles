@@ -1,14 +1,16 @@
-# starship.rs prompt
-starship init fish | source
-
-if test -d ~/dd
 # Load homebrew shell variables
 {{ if eq .chezmoi.os "darwin" -}}
 eval "$(/opt/homebrew/bin/brew shellenv)"
 {{ else -}}
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+if test -d /home/linuxbrew/.linuxbrew
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+end
 {{ end -}}
 
+# starship.rs prompt
+starship init fish | source
+
+if test -d ~/dd
 # Force certain more-secure behaviours from homebrew
 export HOMEBREW_NO_INSECURE_REDIRECT=1
 export HOMEBREW_CASK_OPTS=--require-sha
