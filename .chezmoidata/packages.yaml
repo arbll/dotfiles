@@ -1,5 +1,8 @@
 packages:
   linux:
+    tap:
+    - name: 'datadog/tap'
+      url: 'git@github.com:DataDog/homebrew-tap.git'
     brew:
     - 'helix'
     - 'devcontainer'
@@ -10,6 +13,9 @@ packages:
     - 'pyenv'
     - 'rbenv'
   mac:
+    tap:
+    - name: 'datadog/tap'
+      url: 'git@github.com:DataDog/homebrew-tap.git'
     brew:
     - 'helix'
     - 'devcontainer'

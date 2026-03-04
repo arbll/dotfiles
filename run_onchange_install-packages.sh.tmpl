@@ -8,6 +8,9 @@ if ! command -v brew &>/dev/null; then
 fi
 
 brew bundle --file=/dev/stdin <<EOF
+{{ range .packages.linux.tap -}}
+tap {{ .name | quote }}, {{ .url | quote }}
+{{ end -}}
 {{ range .packages.linux.brew -}}
 brew {{ . | quote }}
 {{ end -}}
@@ -16,6 +19,9 @@ EOF
 #!/bin/bash
 
 brew bundle --file=/dev/stdin <<EOF
+{{ range .packages.mac.tap -}}
+tap {{ .name | quote }}, {{ .url | quote }}
+{{ end -}}
 {{ range .packages.mac.brew -}}
 brew {{ . | quote }}
 {{ end -}}
