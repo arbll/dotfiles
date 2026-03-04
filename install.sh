@@ -7,7 +7,8 @@ set -euo pipefail
 
 # Install chezmoi if not already present
 if ! command -v chezmoi &>/dev/null; then
-    sh -c "$(curl -fsLS get.chezmoi.io)" -- -b /usr/local/bin
+    sh -c "$(curl -fsLS get.chezmoi.io)" -- -b "$HOME/.local/bin"
+    export PATH="$HOME/.local/bin:$PATH"
 fi
 
 # Initialize and apply dotfiles from this repo (already cloned by workspaces)
