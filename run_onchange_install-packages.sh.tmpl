@@ -3,10 +3,7 @@
 
 if ! command -v brew &>/dev/null; then
   echo "Installing Homebrew..."
-  # Force HTTPS instead of SSH — SSH keys may not be available during workspace creation
-  git config --global url."https://github.com/".insteadOf "git@github.com:"
   NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  git config --global --unset url."https://github.com/".insteadOf
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 

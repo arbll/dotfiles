@@ -2,7 +2,7 @@ packages:
   linux:
     tap:
     - name: 'datadog/tap'
-      url: 'https://github.com/DataDog/homebrew-tap.git'
+      url: 'git@github.com:DataDog/homebrew-tap.git'
     brew:
     - 'helix'
     - 'devcontainer'
