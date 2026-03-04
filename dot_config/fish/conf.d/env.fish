@@ -1,3 +1,8 @@
+# Fall back to xterm-256color if the terminal type is unknown
+if not test -e /usr/share/terminfo/(string sub -l 1 $TERM)/$TERM
+    set -gx TERM xterm-256color
+end
+
 set -gx SHELL fish
 set -gx EDITOR hx
 set -gx PAGER less
