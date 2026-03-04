@@ -2,7 +2,6 @@ packages:
   linux:
     brew:
     - 'helix'
-    - 'devcontainer'
     - 'ripgrep'
     - 'starship'
     - 'tlrc'
@@ -15,7 +14,6 @@ packages:
       url: 'git@github.com:DataDog/homebrew-tap.git'
     brew:
     - 'helix'
-    - 'devcontainer'
     - 'ripgrep'
     - 'starship'
     - 'tlrc'
