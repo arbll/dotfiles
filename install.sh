@@ -5,6 +5,10 @@
 
 set -euo pipefail
 
+# SSH keys may not be available during workspace creation — ignore global git
+# config which may rewrite HTTPS URLs to SSH
+export GIT_CONFIG_GLOBAL=/dev/null
+
 LOGFILE="$HOME/.dotfiles-install.log"
 exec > >(tee -a "$LOGFILE") 2>&1
 echo "=== dotfiles install started at $(date) ==="
