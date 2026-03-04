@@ -3,8 +3,16 @@
 
 if ! command -v brew &>/dev/null; then
   echo "Installing Homebrew..."
-  # SSH keys may not be available during workspace creation, use HTTPS remote
-  NONINTERACTIVE=1 HOMEBREW_BREW_GIT_REMOTE=https://github.com/Homebrew/brew /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  # SSH keys may not be available during workspace creation — temporarily
+  # remove any git SSH-rewrite rules so Homebrew can clone over HTTPS
+  SSH_REWRITE=$(git config --global --get url."git@github.com:".insteadOf 2>/dev/null || true)
+  if [ -n "$SSH_REWRITE" ]; then
+    git config --global --unset url."git@github.com:".insteadOf
+  fi
+  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  if [ -n "$SSH_REWRITE" ]; then
+    git config --global url."git@github.com:".insteadOf "$SSH_REWRITE"
+  fi
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
