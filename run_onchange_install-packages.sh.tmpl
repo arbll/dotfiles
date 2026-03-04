@@ -1,6 +1,11 @@
 {{ if eq .chezmoi.os "linux" -}}
 #!/bin/bash
 
+if ! command -v brew &>/dev/null; then
+  echo "brew not found, skipping package install on linux"
+  exit 0
+fi
+
 brew bundle --file=/dev/stdin <<EOF
 {{ range .packages.linux.brew -}}
 brew {{ . | quote }}
