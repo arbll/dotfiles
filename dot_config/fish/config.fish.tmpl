@@ -69,7 +69,9 @@ export GOPROXY="https://depot-read-api-go.us1.ddbuild.io/magicmirror/magicmirror
 export GITLAB_HOST=gitlab.ddbuild.io
 
 # Load ddtool completions
-source (brew --prefix)/share/fish/vendor_completions.d/ddtool.fish
+if test -f (brew --prefix)/share/fish/vendor_completions.d/ddtool.fish
+    source (brew --prefix)/share/fish/vendor_completions.d/ddtool.fish
+end
 
 {{ if eq .chezmoi.os "darwin" -}}
 # Load dd-gitsign SSH key (laptop only, workspaces use SSH agent forwarding)
