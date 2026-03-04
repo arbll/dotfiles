@@ -2,9 +2,7 @@
 {{ if eq .chezmoi.os "darwin" -}}
 eval "$(/opt/homebrew/bin/brew shellenv)"
 {{ else -}}
-if test -d /home/linuxbrew/.linuxbrew
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-end
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 {{ end -}}
 
 # starship.rs prompt
