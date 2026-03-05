@@ -213,7 +213,7 @@
     ]
   },
   "sandbox": {
-    "enabled": true,
+    "enabled": false,
     "network": {},
     "autoAllow": true
   },
