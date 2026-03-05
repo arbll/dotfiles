@@ -18,7 +18,7 @@ chezmoi/
 ├── .chezmoidata/
 │   └── packages.yaml              # Package definitions for different OSes
 ├── dot_claude/
-│   └── settings.local.json        # Claude Code permissions and command allowlist
+│   └── settings.json              # Claude Code global settings (permissions, sandbox, hooks, plugins)
 ├── dot_config/
 │   ├── fish/                      # Fish shell configuration
 │   │   ├── conf.d/
@@ -75,9 +75,9 @@ chezmoi/
 - macOS titlebar style: tabs
 - Option key as Alt
 
-#### Claude Code (`dot_claude/settings.local.json`)
-- Permission allowlist for bash commands
-- Safe operations while restricting harmful commands
+#### Claude Code (`dot_claude/settings.json`)
+- Global user settings: permissions, sandbox config, hooks, plugins, model
+- **Important:** Always edit `settings.json` (not `settings.local.json`) unless the user explicitly asks for the local file. `settings.local.json` at the user level does NOT work — it only applies at the project level.
 
 ### Chezmoi Naming Conventions
 
@@ -199,7 +199,7 @@ chezmoi apply -v
 | `~/.tmux.conf` | `dot_tmux.conf` | `chezmoi edit ~/.tmux.conf` |
 | `~/.config/fish/config.fish` | `dot_config/fish/config.fish` | `chezmoi edit ~/.config/fish/config.fish` |
 | `~/.config/nvim/init.lua` | `dot_config/nvim/init.lua` | `chezmoi edit ~/.config/nvim/init.lua` |
-| `~/.claude/settings.local.json` | `dot_claude/settings.local.json` | `chezmoi edit ~/.claude/settings.local.json` |
+| `~/.claude/settings.json` | `dot_claude/settings.json` | `chezmoi edit ~/.claude/settings.json` |
 
 ### When to Edit Source Directory Directly
 

@@ -1,0 +1,221 @@
+{
+  "model": "opus",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/arthur.bellal/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/arthur.bellal/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/arthur.bellal/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/arthur.bellal/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/arthur.bellal/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/arthur.bellal/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/arthur.bellal/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ],
+    "PostToolUseFailure": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/arthur.bellal/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/arthur.bellal/.claude/hooks/peon-ping/peon.sh",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "skill-creator@claude-plugins-official": true,
+    "atlassian@claude-plugins-official": true,
+    "dd@datadog-claude-plugins": true
+  },
+  "extraKnownMarketplaces": {},
+  "permissions": {
+    "allow": [
+      "Read(**)",
+      "Read(~/**)",
+      "Read(//**)",
+      "Edit(**)",
+      "WebSearch(*)",
+      "WebFetch(*)",
+      "Bash(chezmoi *)",
+      "Bash(git *)",
+      "Bash(gh *)",
+      "Bash(glab *)",
+      "Bash(ls *)",
+      "Bash(brew install *)",
+      "Bash(sudo tee *)",
+      "Bash(echo *)",
+      "Bash(sudo -v)",
+      "Bash(chsh *)",
+      "Bash(test *)",
+      "Bash(cd *)",
+      "Bash(export *)",
+      "Bash(protoc *)",
+      "Bash(go *)",
+      "Bash(pwd)",
+      "Bash(cat *)",
+      "Bash(head *)",
+      "Bash(tail *)",
+      "Bash(grep *)",
+      "Bash(find *)",
+      "Bash(pip list *)",
+      "Bash(pip show *)",
+      "Bash(pip search *)",
+      "Bash(pip freeze *)",
+      "Bash(pip check *)",
+      "Bash(pip --version)",
+      "Bash(pip help *)",
+      "Bash(hatch version *)",
+      "Bash(hatch env show *)",
+      "Bash(hatch project metadata *)",
+      "Bash(hatch status *)",
+      "Bash(hatch --version)",
+      "Bash(hatch --help)",
+      "Bash(gcloud compute instances *)",
+      "Bash(gcloud compute firewall-rules *)",
+      "Bash(gcloud compute ssh *)",
+      "Bash(curl *)",
+      "Bash(kind *)",
+      "Bash(minikube *)",
+      "Bash(kubectl get *)",
+      "Bash(kubectl describe *)",
+      "Bash(kubectl logs *)",
+      "Bash(kubectl explain *)",
+      "Bash(kubectl version *)",
+      "Bash(kubectl config view *)",
+      "Bash(kubectl top *)",
+      "Bash(kubectl api-resources *)",
+      "Bash(kubectl api-versions *)",
+      "Bash(kubectl cluster-info *)",
+      "Bash(kubectl diff *)",
+      "Bash(kubectl events *)",
+      "Bash(dda *)",
+      "mcp__atlassian__atlassianUserInfo",
+      "mcp__atlassian__getAccessibleAtlassianResources",
+      "mcp__atlassian__getConfluencePage",
+      "mcp__atlassian__searchConfluenceUsingCql",
+      "mcp__atlassian__getConfluenceSpaces",
+      "mcp__atlassian__getPagesInConfluenceSpace",
+      "mcp__atlassian__getConfluencePageFooterComments",
+      "mcp__atlassian__getConfluencePageInlineComments",
+      "mcp__atlassian__getConfluenceCommentChildren",
+      "mcp__atlassian__getConfluencePageDescendants",
+      "mcp__atlassian__getJiraIssue",
+      "mcp__atlassian__getTransitionsForJiraIssue",
+      "mcp__atlassian__getJiraIssueRemoteIssueLinks",
+      "mcp__atlassian__getVisibleJiraProjects",
+      "mcp__atlassian__getJiraProjectIssueTypesMetadata",
+      "mcp__atlassian__getJiraIssueTypeMetaWithFields",
+      "mcp__atlassian__searchJiraIssuesUsingJql",
+      "mcp__atlassian__lookupJiraAccountId",
+      "mcp__atlassian__search",
+      "mcp__atlassian__fetch",
+      "WebFetch(domain:api.github.com)",
+      "WebFetch(domain:example.com)",
+      "WebFetch(domain:google.com)",
+      "WebFetch(domain:httpbin.org)",
+      "WebFetch(domain:http-intake.logs.datadoghq.com)"
+    ]
+  },
+  "sandbox": {
+    "enabled": true,
+    "network": {},
+    "autoAllow": true
+  },
+  "includeCoAuthoredBy": false
+}
