@@ -114,9 +114,7 @@
   "extraKnownMarketplaces": {},
   "permissions": {
     "allow": [
-      "Read(**)",
-      "Read(~/**)",
-      "Read(//**)",
+      "Read",
       "Edit(**)",
       "WebSearch(*)",
       "WebFetch(*)",
