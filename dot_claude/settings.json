@@ -155,6 +155,7 @@
       "Bash(gcloud compute instances *)",
       "Bash(gcloud compute firewall-rules *)",
       "Bash(gcloud compute ssh *)",
+      "Bash(bzl *)",
       "Bash(command *)",
       "Bash(curl *)",
       "Bash(kind *)",
